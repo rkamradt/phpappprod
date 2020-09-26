@@ -13,7 +13,14 @@ services:
     restart: always
     volumes:
      - ./data:/var/lib/mysql
+     - ./init:/docker-entrypoint-initdb.d
     env_file:
       - ../phpapp.env
     ports:
       - 3306:3306
+  phpapp:
+    image: rlkamradt/phpapp
+    env_file:
+      - ../phpapp.env
+    ports:
+      - 8000:8000
