@@ -8,3 +8,12 @@ services:
      - ..:/etc/certs
     ports:
      - "443:443"
+  mariadb:
+    image: mariadb
+    restart: always
+    volumes:
+     - ./data:/var/lib/mysql
+    env_file:
+      - ../phpapp.env
+    ports:
+      - 3306:3306
