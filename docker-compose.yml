@@ -24,3 +24,9 @@ services:
       - ../phpapp.env
     ports:
       - 8000:8000
+  vouch:
+    image: voucher/vouch-proxy
+    volumes:
+      - ..:/config 
+    ports:
+      - 9090:9090
