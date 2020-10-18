@@ -24,9 +24,15 @@ services:
       - ../phpapp.env
     ports:
       - 8000:8000
+  phprest:
+    image: rlkamradt/phprest
+    env_file:
+      - ../phprest.env
+    ports:
+      - 8001:8000
   vouch:
     image: voucher/vouch-proxy
     volumes:
-      - ..:/config 
+      - ..:/config
     ports:
       - 9090:9090
