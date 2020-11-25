@@ -30,12 +30,12 @@ services:
      - ./notebooks:/home/jovyan
     ports:
       - 8888:8888
-  phprest:
-    image: rlkamradt/phprest
-    env_file:
-      - ../phprest.env
+  pyrest:
+    image: rlkamradt/winepairingapi
+    volumes:
+    - ../config:/project/config
     ports:
-      - 8001:8000
+      - 5000:5000
   vouch:
     image: voucher/vouch-proxy
     volumes:
