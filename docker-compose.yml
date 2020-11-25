@@ -24,12 +24,6 @@ services:
       - ../phpapp.env
     ports:
       - 8000:8000
-  jupyter:
-    image: jupyter/scipy-notebook:2c80cf3537ca
-    volumes:
-     - ./notebooks:/home/jovyan
-    ports:
-      - 8888:8888
   pyrest:
     image: rlkamradt/winepairingapi
     volumes:
